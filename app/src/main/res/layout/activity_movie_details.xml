@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <ImageView
+    android:id="@+id/iv_movieDetailsActivity_backdrop"
+    android:layout_width="0dp"
+    android:layout_height="200dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/bg_poster"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="ContentDescription" />
+
+  <androidx.cardview.widget.CardView
+    android:id="@+id/crd_movieDetailsItem_posterCard"
+    style="@style/ImageCardView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toLeftOf="@id/tv_movieDetailsActivity_rating"
+    app:layout_constraintTop_toBottomOf="@id/iv_movieDetailsActivity_backdrop">
+
+    <ImageView
+      android:id="@+id/iv_movieDetailsItem_poster"
+      android:layout_width="100dp"
+      android:layout_height="200dp"
+      android:scaleType="centerCrop"
+      android:src="@drawable/bg_poster"
+      tools:ignore="ContentDescription" />
+
+  </androidx.cardview.widget.CardView>
+
+  <TextView
+    android:id="@+id/tv_movieDetailsActivity_rating"
+    style="@style/RatingTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:drawableStartCompat="@drawable/ic_rating"
+    app:layout_constraintBottom_toTopOf="@id/tv_movieDetailsActivity_releaseYear"
+    app:layout_constraintLeft_toRightOf="@id/crd_movieDetailsItem_posterCard"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="@id/crd_movieDetailsItem_posterCard"
+    app:layout_constraintVertical_chainStyle="packed" />
+
+  <TextView
+    android:id="@+id/tv_movieDetailsActivity_releaseYear"
+    style="@style/DefaultTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="@id/crd_movieDetailsItem_posterCard"
+    app:layout_constraintLeft_toLeftOf="@id/tv_movieDetailsActivity_rating"
+    app:layout_constraintRight_toRightOf="@id/tv_movieDetailsActivity_rating"
+    app:layout_constraintTop_toBottomOf="@id/tv_movieDetailsActivity_rating" />
+
+  <TextView
+    android:id="@+id/tv_movieDetailsActivity_description"
+    style="@style/DefaultTextView"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/crd_movieDetailsItem_posterCard" />
+
+  <ProgressBar
+    android:id="@+id/pb_movieDetailsActivity_progressBar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

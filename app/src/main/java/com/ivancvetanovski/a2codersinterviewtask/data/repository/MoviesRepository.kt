@@ -1,5 +1,6 @@
 package com.ivancvetanovski.a2codersinterviewtask.data.repository
 
+import com.ivancvetanovski.a2codersinterviewtask.data.model.dto.MovieDetailsDto
 import com.ivancvetanovski.a2codersinterviewtask.data.model.dto.MovieDto
 import com.ivancvetanovski.a2codersinterviewtask.data.net.ApiResponse
 import com.ivancvetanovski.a2codersinterviewtask.data.net.Result
@@ -13,5 +14,10 @@ class MoviesRepository : BaseRepository() {
   suspend fun getMovieList(page: Int?): Result<ApiResponse<MovieDto>> =
     safeApiCall {
       moviesService.loadPopularMovies(page)
+    }
+
+  suspend fun getMovieDetails(movieId: Int): Result<MovieDetailsDto> =
+    safeApiCall {
+      moviesService.getMovieDetails(movieId = movieId)
     }
 }
